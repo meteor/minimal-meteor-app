@@ -1,4 +1,9 @@
 body {
   padding: 10px;
   font-family: sans-serif;
+  font-size: 12pt;
+}
+
+code {
+  white-space: pre;
 }
