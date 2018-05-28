@@ -12,12 +12,13 @@ onPageLoad(sink => {
   const modern = isModern(browser);
 
   // Code to run on every request.
-  sink.renderIntoElementById(
-    "server-render-target",
-    `Server time: ${new Date}<br><br>` +
-      `User agent: <code>${JSON.stringify(browser, null, 2)}</code> ` +
-      `(${modern ? "modern" : "legacy"})`
-  );
+  sink.renderIntoElementById("server-render-target", `
+<p>Server time: ${new Date}</p>
+<p>User agent: <code>${
+  JSON.stringify(browser, null, 2)
+}</code> (${
+  modern ? "modern" : "legacy"
+})</p>`);
 
   if (browser.name !== "galaxybot" && ! modern) {
     console.log("legacy browser!", browser);
